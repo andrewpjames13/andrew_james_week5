@@ -1,0 +1,35 @@
+<div class = "page-header">
+<h1> <%= @location.name %></h1>
+</div>
+
+<dl class = "dl-horizontal">
+  <dt><b>Name:</b></dt>
+  <p><dd><%= @location.name %></dd></p>
+
+  <dt><b>Address:</b></dt>
+  <p><dd><%= @location.address %></dd></p>
+
+  <dt><b>Email:</b></dt>
+  <p><dd><%= @location.zip_code %></dd></p>
+</dl>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Adderss</th>
+      <th>Zip</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @location.events.each do |x| %>
+    <tr>
+      <td><%= x.description %></td>
+      <td><%= x.date %></td>
+      <td><%= x.requires_id %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
